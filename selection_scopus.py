@@ -1,10 +1,10 @@
 from pybliometrics.scopus import AbstractRetrieval
+from pybliometrics.scopus import AuthorRetrieval
+from pybliometrics.scopus import ScopusSearch
 
 import pandas as pd
 xlsx = pd.ExcelFile('candidatos.xlsx', engine='openpyxl')  
 df = pd.read_excel(xlsx) # Read an Excel file into a pandas DataFrame.
-
-from pybliometrics.scopus import AuthorRetrieval
 
 Fator_H = []
 n_citacoes = []
@@ -29,10 +29,6 @@ df1['Numero de documentos'] = n_documentos
 
 # Create the function to obtain the index i10
 def i10(): 
-    from pybliometrics.scopus import AuthorRetrieval
-    from pybliometrics.scopus import AbstractRetrieval
-    from pybliometrics.scopus import ScopusSearch
-
     f=0
     for f in range(df['ID'].count()):
         auau = AuthorRetrieval(df['ID'][f])
@@ -55,10 +51,6 @@ def i10():
     
 # Create the function to obtain the index i20
 def i20():
-    from pybliometrics.scopus import AuthorRetrieval
-    from pybliometrics.scopus import AbstractRetrieval
-    from pybliometrics.scopus import ScopusSearch
-
     f=0
     for f in range(df['ID'].count()):
         auau = AuthorRetrieval(df['ID'][f])
